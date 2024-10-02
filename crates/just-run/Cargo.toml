@@ -1,0 +1,22 @@
+[package]
+authors = ["Asger Juul Brunshøj <asgerbrunshoj@gmail.com>"]
+description = "Convenience crate for executing system commands with the expectation of successful termination and UTF-8 encoded output, for basic straightforward command execution scenarios."
+edition.workspace = true
+license = "MIT"
+name = "just-run"
+publish = true
+readme = "../../README.md"
+repository = "https://github.com/plul/just-run"
+version = "0.1.0"
+
+[package.metadata.docs.rs]
+features = []
+rustdoc-args = ["--cfg", "docsrs"]
+
+[dependencies]
+
+[dev-dependencies]
+indoc = "2"
+
+[lints]
+workspace = true

@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+
+members = ["crates/just-run"]
+
+[workspace.package]
+edition = "2021"
+
+[workspace.lints.rust]
+future_incompatible = { level = "deny", priority = -1 }
+missing_debug_implementations = "warn"
+missing_docs = "warn"
+nonstandard_style = { level = "deny", priority = -1 }
+rust_2018_idioms = { level = "deny", priority = -1 }
