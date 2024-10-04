@@ -4,12 +4,16 @@
 of successful termination and UTF-8 encoded output. It aims to handle the most common case without
 extensive configuration or edge case coverage.
 
+## Documentation
+
+<https://docs.rs/just-run/latest/just_run/>
+
 ## Usage
 
 ```rust
 use just_run::{run, Success};
 
-let Success { stdout, stderr } = run("echo", ["Hello world!"]).expect("Command failed");
+let Success { stdout, stderr } = run("echo", ["Hello world!"]).unwrap();
 println!("{stdout}");
 ```
 
