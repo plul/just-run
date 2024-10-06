@@ -8,8 +8,8 @@
 //! ```rust
 //! use just_run::{run, Success};
 //!
-//! let Success { stdout, stderr } = run("echo", ["Hello world!"]).expect("Command failed");
-//! println!("{stdout}");
+//! let Success { stdout, stderr } = run("echo", ["hello", "world"]).unwrap();
+//! assert_eq!(stdout.trim(), "hello world");
 //! ```
 //!
 //! For more advanced use cases, consider checking out the [`duct`](https://crates.io/crates/duct) crate or
@@ -157,6 +157,12 @@ mod tests {
     /// Helper function to generate fake command execution output with a specified number of lines.
     fn generate_lines(prefix: &str, lines: usize) -> Vec<u8> {
         (1..=lines).map(|i| format!("{prefix} line {}\n", i)).collect::<String>().into_bytes()
+    }
+
+    #[test]
+    fn test_echo() {
+        let Success { stdout, .. } = run("echo", ["hello", "world"]).unwrap();
+        assert_eq!(stdout.trim(), "hello world");
     }
 
     #[test]

@@ -13,8 +13,8 @@ extensive configuration or edge case coverage.
 ```rust
 use just_run::{run, Success};
 
-let Success { stdout, stderr } = run("echo", ["Hello world!"]).unwrap();
-println!("{stdout}");
+let Success { stdout, stderr } = run("echo", ["hello", "world"]).unwrap();
+assert_eq!(stdout.trim(), "hello world");
 ```
 
 ## See also
